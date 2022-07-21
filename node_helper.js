@@ -7,8 +7,6 @@
 const NodeHelper = require('node_helper');
 const request = require('request');
 const exec = require("child_process").exec; 
-const wget = require('wget');
-
 
 module.exports = NodeHelper.create({
 	  

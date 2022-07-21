@@ -22,7 +22,7 @@ Module.register("MMM-Astrology", {
         fontSize: "14px",
         textalign: "left",
         titlemarginleft: "40",
-        translation_languages: ["it"],
+        translation_languages: "",
         
 
         sign : {
@@ -91,9 +91,9 @@ Module.register("MMM-Astrology", {
 			wrapper.className = "bright light small";
 			return wrapper;
 		}
-            var starSign = this.config.sign[astro.sunsign];
-
+            var starSign = this.config.sign[astro.sign];
 			var ssign=  document.createElement("div");
+			
             ssign.className = "title_image";
 			ssign.style.color = this.config.scolor;
 			//ssign.setAttribute('style','margin-bottom: -50px');
@@ -142,7 +142,7 @@ Module.register("MMM-Astrology", {
 		var newSign = this.config.starSign;
 
 		if (hType == "daily") {
-			url = "https://horoscope-api.herokuapp.com/horoscope/today/"+ this.config.starSign;
+			url = "https://ohmanda.com/api/horoscope/"+ this.config.starSign;
 		} else if (hType == "week") {
 			url = "https://horoscope-api.herokuapp.com/horoscope/week/"+ this.config.starSign;
 		} else if(hType == "month" || hType == "yearly") {
@@ -160,7 +160,6 @@ Module.register("MMM-Astrology", {
         this.today = data.Today;
         this.astro = data;
         this.astroHoroscope = this.astro.horoscope;
-        console.log(this.astro);
         this.loaded = true;
 	},
 
